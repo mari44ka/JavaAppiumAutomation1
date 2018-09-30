@@ -43,7 +43,7 @@ public class FirstTest {
     element_to_init_search.click();
     //System.out.println("First test run");
 
-    WebElement element_to_enter_search_line = WaitforElementPresentbyXpath("//*[contains(@text,'Search…')]", "cannot find search input", 5);
+    WebElement element_to_enter_search_line = WaitforElementPresentbyXpath("//*[contains(@text,'Search…')]", "cannot find search input");
     element_to_enter_search_line.sendKeys("appium");
 
   }
@@ -53,9 +53,11 @@ public class FirstTest {
     wait.withMessage(error_message + "\n");
     By by = By.xpath(xpath);
     return wait.until(ExpectedConditions.presenceOfElementLocated(by));
+  }
+  private WebElement WaitforElementPresentbyXpath(String xpath, String error_message)
+  {
 
-
-
+    return WaitforElementPresentbyXpath(xpath,error_message,5);
   }
 
 }
