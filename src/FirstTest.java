@@ -40,12 +40,12 @@ public class FirstTest {
   public void firstTest()
   {
     waitforElementbyXpathAndClick(
-            "//*[contains(@text,'Search Wikipedia')]",
+          "//*[contains(@text,'Search Wikipedia')]",
             "cannot find search input",
             5);
 
     waitforElementbyXpathAndSendKeys("//*[contains(@text,'Search…')]",
-            "Java",
+           "Java",
             "cannot find search input",
             5);
 
@@ -54,6 +54,31 @@ public class FirstTest {
             15);
 
   }
+
+  @Test
+  public void testCancelSearch()
+
+  {
+
+    waitforElementByIdAndClick(
+            "org.wikipedia:id/search_container",
+            "cannot find search input",
+            5);
+
+     waitforElementByIdAndClick(
+          "org.wikipedia:id/search_close_btn",
+           "cannot find X to cancel search",
+           5);
+
+
+    waithForElementNotPresent(
+            "org.wikipedia:id/search_close_btn",
+    "X is still present on the page",
+            5);
+
+
+  }
+
 
   private WebElement WaitforElementPresentbyXpath(String xpath, String error_message, long timeoutInSeconds )
   {
@@ -85,6 +110,32 @@ public class FirstTest {
     return element;
 
   }
+
+  private WebElement waitforElementPresentById(String id, String error_message, long timeoutInSeconds)
+  {
+    WebDriverWait wait = new WebDriverWait(driver,timeoutInSeconds);
+    wait.withMessage(error_message + "\n");
+    By by = By.id(id);
+    return wait.until(ExpectedConditions.presenceOfElementLocated(by));
+  }
+
+  private WebElement waitforElementByIdAndClick(String id, String error_message,long timeoutInSeconds)
+  {
+    WebElement element = waitforElementPresentById(id,error_message,timeoutInSeconds);
+    element.click();
+    return element;
+  }
+
+  private boolean waithForElementNotPresent(String id, String error_message, long timeoutInSeconds)
+  {
+    WebDriverWait wait = new WebDriverWait(driver,timeoutInSeconds);
+    wait.withMessage(error_message + "\n");
+    By by = By.id(id);
+    return wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
+
+  }
+
+
 
 
 }
