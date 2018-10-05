@@ -1,6 +1,7 @@
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -48,7 +49,8 @@ public class FirstTest {
             "cannot find search input",
             5);
 
-    WaitforElementPresent(By.xpath("//*[@resource-id ='org.wikipedia:id/page_list_item_container']//*[@text ='Object-oriented programming language']"),
+    WaitforElementPresent(
+            By.xpath("//*[@resource-id ='org.wikipedia:id/page_list_item_container']//*[@text ='Object-oriented programming language']"),
             "cannot find Object-oriented programming language. Topic searching by java",
             15);
 
@@ -86,6 +88,36 @@ public class FirstTest {
 
   }
 
+  @Test
+  public void testCompareArticleTitle()
+  {
+    waitforElementAndClick(By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+            "cannot find search input",
+            5);
+
+    waitforElementAndSendKeys(By.xpath("//*[contains(@text,'Search…')]"),
+            "Java",
+            "cannot find search input",
+            5);
+    waitforElementAndClick(
+            By.xpath("//*[@resource-id ='org.wikipedia:id/page_list_item_container']//*[@text ='Object-oriented programming language']"),
+            "cannot find Object-oriented programming language. Topic searching by java",
+            5);
+
+    WebElement title_element = WaitforElementPresent(By.id("org.wikipedia:id/view_page_title_text"),
+            "cannot find title",
+            15);
+
+    String article_title = title_element.getAttribute("text");
+
+    Assert.assertEquals(
+            "we cannot see expected title",
+            "Java (programming language)",
+            article_title);
+
+
+
+  }
 
   private WebElement WaitforElementPresent(By by, String error_message, long timeoutInSeconds )
   {
