@@ -13,11 +13,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FirstTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FirstTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="72" column="68" lean-forward="true" selection-start-line="72" selection-start-column="27" selection-end-line="72" selection-end-column="68" />
+            <state relative-caret-position="-590">
+              <caret line="148" column="0" lean-forward="true" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -25,7 +25,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyTest1.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyTest1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MyTest1.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
@@ -58,8 +58,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/FirstTest.java" />
         <option value="$PROJECT_DIR$/src/MyTest1.java" />
+        <option value="$PROJECT_DIR$/src/FirstTest.java" />
       </list>
     </option>
   </component>
@@ -163,28 +163,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MyTest1.testSearchCancel">
-    <configuration default="false" name="FirstTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="JavaAppiumAutomation" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FirstTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.FirstTest.testSwipeArticle">
     <configuration default="false" name="FirstTest.testCancelSearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="JavaAppiumAutomation" />
@@ -256,6 +235,27 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MyTest1" />
       <option name="METHOD_NAME" value="testSearchCancel" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="FirstTest.testSwipeArticle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="JavaAppiumAutomation" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FirstTest" />
+      <option name="METHOD_NAME" value="testSwipeArticle" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -515,19 +515,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.FirstTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.FirstTest.testCancelSearch" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.FirstTest.testCompareArticleTitle" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.MyTest1" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.MyTest1.testSearchCancel" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.FirstTest.testCancelSearch" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.FirstTest.testCompareArticleTitle" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.MyTest1" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.MyTest1.testSearchCancel" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.FirstTest.testSwipeArticle" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.MyTest1.testSearchCancel" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.MyTest1" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.FirstTest.testCompareArticleTitle" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.FirstTest.testCancelSearch" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.FirstTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.FirstTest.testSwipeArticle" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.MyTest1.testSearchCancel" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.MyTest1" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.FirstTest.testCompareArticleTitle" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.FirstTest.testCancelSearch" />
       </list>
     </recent_temporary>
   </component>
@@ -545,26 +545,26 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MyTest1_testSearchCancel - 2018.10.05 at 17h 30m 47s.xml">
-      <configuration name="MyTest1.testSearchCancel" configurationId="JUnit" />
+    <history-entry file="FirstTest_testSwipeArticle - 2018.10.09 at 14h 37m 35s.xml">
+      <configuration name="FirstTest.testSwipeArticle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyTest1_testSearchCancel - 2018.10.05 at 17h 31m 51s.xml">
-      <configuration name="MyTest1.testSearchCancel" configurationId="JUnit" />
+    <history-entry file="FirstTest_testSwipeArticle - 2018.10.09 at 14h 39m 58s.xml">
+      <configuration name="FirstTest.testSwipeArticle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyTest1_testSearchCancel - 2018.10.05 at 17h 33m 11s.xml">
-      <configuration name="MyTest1.testSearchCancel" configurationId="JUnit" />
+    <history-entry file="FirstTest_testSwipeArticle - 2018.10.09 at 14h 42m 30s.xml">
+      <configuration name="FirstTest.testSwipeArticle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyTest1_testSearchCancel - 2018.10.05 at 17h 34m 08s.xml">
-      <configuration name="MyTest1.testSearchCancel" configurationId="JUnit" />
+    <history-entry file="FirstTest_testSwipeArticle - 2018.10.09 at 14h 46m 09s.xml">
+      <configuration name="FirstTest.testSwipeArticle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyTest1_testSearchCancel - 2018.10.05 at 17h 35m 19s.xml">
-      <configuration name="MyTest1.testSearchCancel" configurationId="JUnit" />
+    <history-entry file="FirstTest_testSwipeArticle - 2018.10.09 at 14h 47m 33s.xml">
+      <configuration name="FirstTest.testSwipeArticle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyTest1_testSearchCancel - 2018.10.05 at 17h 36m 24s.xml">
-      <configuration name="MyTest1.testSearchCancel" configurationId="JUnit" />
+    <history-entry file="FirstTest_testSwipeArticle - 2018.10.09 at 14h 48m 32s.xml">
+      <configuration name="FirstTest.testSwipeArticle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyTest1_testSearchCancel - 2018.10.05 at 17h 37m 07s.xml">
-      <configuration name="MyTest1.testSearchCancel" configurationId="JUnit" />
+    <history-entry file="FirstTest_testSwipeArticle - 2018.10.09 at 14h 50m 09s.xml">
+      <configuration name="FirstTest.testSwipeArticle" configurationId="JUnit" />
     </history-entry>
     <history-entry file="MyTest1_testSearchCancel - 2018.10.05 at 19h 25m 36s.xml">
       <configuration name="MyTest1.testSearchCancel" configurationId="JUnit" />
@@ -720,22 +720,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="72" column="68" lean-forward="true" selection-start-line="72" selection-start-column="27" selection-end-line="72" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MyTest1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-590">
+          <caret line="148" column="0" lean-forward="true" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
+          <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
