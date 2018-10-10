@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.URL;
+import java.util.List;
 
 /**
  * Created by Mari on 9/20/18.
@@ -219,6 +220,31 @@ public class FirstTest {
 
   }
 
+  @Test
+  public void testAmountOfNotEmptySearch()
+  {
+
+    waitforElementAndClick(By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+            "cannot find search input",
+            5);
+    String search_line = "Linkin park discography";
+    waitforElementAndSendKeys(By.xpath("//*[contains(@text,'Search…')]"),
+            search_line,
+            "cannot find search line",
+            5);
+    String search_result_locator = "//*[@resource-id ='org.wikipedia:id/search_results_list']/*[@resource-id ='org.wikipedia:id/page_list_item_container']";
+    WaitforElementPresent(By.xpath(search_result_locator),
+            "cannot find anyting by the request"+search_line,
+            15);
+
+    int amountOfSearchResults = getAmountOfElements(By.xpath(search_result_locator));
+     Assert.assertTrue("we found too few results",
+             amountOfSearchResults>0);
+
+
+
+  }
+
 
   private WebElement WaitforElementPresent(By by, String error_message, long timeoutInSeconds )
   {
@@ -297,29 +323,40 @@ public class FirstTest {
       swipeUpQuick();
     }
   }
-  protected void swipeElementToLeft(By by,String error_message)
-  {
+  protected void swipeElementToLeft(By by,String error_message) {
     WebElement element = WaitforElementPresent(
             by,
             error_message,
             10);
-    int left_x= element.getLocation().getX();
+    int left_x = element.getLocation().getX();
 
     int right_x = left_x + element.getSize().getWidth();
     int upper_y = element.getLocation().getY();
     int lower_y = upper_y + element.getSize().getHeight();
-    int middle_y = (upper_y + lower_y)/2;
+    int middle_y = (upper_y + lower_y) / 2;
     TouchAction action = new TouchAction(driver);
     action.
-            press(right_x,middle_y).
+            press(right_x, middle_y).
             waitAction(300).
-            moveTo(left_x,middle_y).
+            moveTo(left_x, middle_y).
             release().
             perform();
+  }
+
+  private int getAmountOfElements(By by)
+  {  List elements =driver.findElements(by);
+    return elements.size();
 
   }
 
+
+
+
+
+
   }
+
+
 
 
 
