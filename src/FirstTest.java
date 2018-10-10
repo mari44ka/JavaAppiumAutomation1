@@ -152,6 +152,73 @@ public class FirstTest {
 
   }
 
+  @Test
+  public void saveFirstArticleToMyList()
+  {
+    waitforElementAndClick(By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+            "cannot find search input",
+            5);
+
+    waitforElementAndSendKeys(By.xpath("//*[contains(@text,'Search…')]"),
+            "Java",
+            "cannot find search input",
+            5);
+    waitforElementAndClick(
+            By.xpath("//*[@resource-id ='org.wikipedia:id/page_list_item_container']//*[@text ='Object-oriented programming language']"),
+            "cannot find Object-oriented programming language. Topic searching by java",
+            5);
+    WaitforElementPresent(By.id("org.wikipedia:id/view_page_title_text"),
+            "cannot find title",
+            10);
+
+    waitforElementAndClick(By.xpath("//android.widget.ImageView[@content-desc = 'More options']"),
+            "cannot find button to open article options",
+            5);
+     waitforElementAndClick(By.xpath("//*[@text ='Add to reading list']"),
+             "cannot find option 'add to reading list'",
+             5);
+     waitforElementAndClick(By.id("org.wikipedia:id/onboarding_button"),
+             "cannot find 'Got it' button",
+             5);
+     waitForElementAndClear(By.id("org.wikipedia:id/text_input"),
+             "cannot find input to set name for article folder",
+             5);
+
+     String name_of_folder = "learning programming";
+     waitforElementAndSendKeys(By.id("org.wikipedia:id/text_input"),
+             name_of_folder,
+             "cannot put text into input",
+             5);
+
+     waitforElementAndClick(By.xpath("//*[@text = 'OK']"),
+             "cannot click button OK",
+             5);
+
+     waitforElementAndClick(By.xpath("//android.widget.ImageButton[@content-desc ='Navigate up']"),
+             "cannot find X link",
+             5);
+     waitforElementAndClick(By.xpath("//android.widget.FrameLayout[@content-desc ='My lists']"),
+             "cannot find navigation button to my list",
+             5);
+     waitforElementAndClick(By.xpath("//*[@text ='learning programming']"),
+             "cannot find my list",
+             5);
+     WaitforElementPresent(By.xpath("//*[@text = 'Java (programming language)']"),
+             "cannot find saved article",
+             5);
+
+      swipeElementToLeft(By.xpath("//*[@text = 'Java (programming language)']"),
+              "cannot swipe element");
+
+      waithForElementNotPresent(By.xpath("//*[@text = 'Java (programming language)']"),
+              "cannot delete article",
+              5);
+
+
+
+
+  }
+
 
   private WebElement WaitforElementPresent(By by, String error_message, long timeoutInSeconds )
   {
@@ -217,22 +284,43 @@ public class FirstTest {
 
   }
 
-  protected void swipeUpToFindElement(By by, String error_message, int max_swipes)
-  {
+  protected void swipeUpToFindElement(By by, String error_message, int max_swipes) {
     driver.findElements(by);
     driver.findElements(by).size();
     int already_swiped = 0;
-    while (driver.findElements(by).size()==0){
-      if (already_swiped > max_swipes){
-        WaitforElementPresent(by,"Cannot find an element by swiping up\n" + error_message,0);
+    while (driver.findElements(by).size() == 0) {
+      if (already_swiped > max_swipes) {
+        WaitforElementPresent(by, "Cannot find an element by swiping up\n" + error_message, 0);
         return;
       }
       ++already_swiped;
       swipeUpQuick();
     }
+  }
+  protected void swipeElementToLeft(By by,String error_message)
+  {
+    WebElement element = WaitforElementPresent(
+            by,
+            error_message,
+            10);
+    int left_x= element.getLocation().getX();
+
+    int right_x = left_x + element.getSize().getWidth();
+    int upper_y = element.getLocation().getY();
+    int lower_y = upper_y + element.getSize().getHeight();
+    int middle_y = (upper_y + lower_y)/2;
+    TouchAction action = new TouchAction(driver);
+    action.
+            press(right_x,middle_y).
+            waitAction(300).
+            moveTo(left_x,middle_y).
+            release().
+            perform();
+
+  }
 
   }
 
 
 
-}
+
