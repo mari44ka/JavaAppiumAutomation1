@@ -11,6 +11,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -213,6 +214,16 @@ public class MyTest1 {
             "title is not present");
 
 
+  }
+
+  @Test
+  // проверяем вначале состояние экрана и поворачиваем, его как нам надо
+  public void testScreenOrientation(){
+    ScreenOrientation orientation = driver.getOrientation();
+    if (orientation == ScreenOrientation.PORTRAIT){
+      driver.rotate(ScreenOrientation.LANDSCAPE);
+      
+    }
   }
 
   private WebElement WaitforElementPresent(By by, String error_message, long timeoutInSeconds) {
