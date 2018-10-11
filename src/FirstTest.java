@@ -177,7 +177,7 @@ public class FirstTest {
             "cannot find input to set name for article folder",
             5);
 
-    String name_of_folder = "learning programming";
+   String name_of_folder = "learning programming";
     waitforElementAndSendKeys(By.id("org.wikipedia:id/text_input"),
             name_of_folder,
             "cannot put text into input",
