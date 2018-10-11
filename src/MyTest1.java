@@ -17,6 +17,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.URL;
+import java.util.List;
 
 /**
  * Created by Mari on 9/20/18.
@@ -189,6 +190,28 @@ public class MyTest1 {
             title,
             article_title);
 
+  }
+
+  @Test
+  public void testCheckTitlePresent()
+  {
+    waitForElementPresentAndClick(By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+            "cannot find search input",
+            5);
+
+    String value = "Appium";
+
+    waitForElementPresentAndSendKeys(By.xpath("//*[contains(@text,'Search…')]"),
+            value,
+            "cannot find search input",
+            5);
+    waitForElementPresentAndClick(
+            By.xpath("//*[@resource-id ='org.wikipedia:id/page_list_item_title'][@text ='Appium']"),
+            "cannot find article searched"+value,
+            5);
+    assertElementPresent(By.id("org.wikipedia:id/view_page_title_text"),
+            "title is not present");
+
 
   }
 
@@ -240,5 +263,21 @@ public class MyTest1 {
             moveTo(left_x, middle_y).
             release().
             perform();
+  }
+
+  private int getAmountOfElements(By by) {
+    List elements = driver.findElements(by);
+    return elements.size();
+
+  }
+
+
+  private void assertElementPresent(By by, String error_message) {
+    int amountOfElements = getAmountOfElements(by);
+    if (amountOfElements < 0) {
+      String default_message = " An element'" + by.toString() + "'supposed to be present";
+      throw new AssertionError(default_message + " " + error_message);
+    }
+
   }
 }

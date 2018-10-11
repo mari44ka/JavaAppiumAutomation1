@@ -16,8 +16,8 @@
       <file leaf-file-name="FirstTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="109" column="16" lean-forward="true" selection-start-line="107" selection-start-column="4" selection-end-line="109" selection-end-column="16" />
+            <state relative-caret-position="335">
+              <caret line="426" column="3" lean-forward="true" selection-start-line="412" selection-start-column="2" selection-end-line="426" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -28,8 +28,8 @@
       <file leaf-file-name="MyTest1.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MyTest1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1005">
-              <caret line="157" column="77" lean-forward="false" selection-start-line="157" selection-start-column="77" selection-end-line="157" selection-end-column="77" />
+            <state relative-caret-position="63">
+              <caret line="195" column="28" lean-forward="false" selection-start-line="195" selection-start-column="28" selection-end-line="195" selection-end-column="28" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -163,28 +163,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MyTest1.testSaveTwoArticles">
-    <configuration default="false" name="FirstTest.testAmountOfNotEmptySearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="JavaAppiumAutomation" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FirstTest" />
-      <option name="METHOD_NAME" value="testAmountOfNotEmptySearch" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.MyTest1.testCheckTitlePresent">
     <configuration default="false" name="FirstTest.testAmountOfEmptySearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="JavaAppiumAutomation" />
@@ -256,6 +235,27 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MyTest1" />
       <option name="METHOD_NAME" value="testSaveTwoArticles" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="MyTest1.testCheckTitlePresent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="JavaAppiumAutomation" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyTest1" />
+      <option name="METHOD_NAME" value="testCheckTitlePresent" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -515,19 +515,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.FirstTest.testAmountOfNotEmptySearch" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.FirstTest.testAmountOfEmptySearch" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.FirstTest.testChangeScreenOrientationOnSearchResult" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.FirstTest.testCheckSearchArticleInBackground" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.MyTest1.testSaveTwoArticles" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.FirstTest.testAmountOfEmptySearch" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.FirstTest.testChangeScreenOrientationOnSearchResult" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.FirstTest.testCheckSearchArticleInBackground" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.MyTest1.testSaveTwoArticles" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.MyTest1.testCheckTitlePresent" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.MyTest1.testSaveTwoArticles" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.FirstTest.testCheckSearchArticleInBackground" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.FirstTest.testChangeScreenOrientationOnSearchResult" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.FirstTest.testAmountOfEmptySearch" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.FirstTest.testAmountOfNotEmptySearch" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.MyTest1.testCheckTitlePresent" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.MyTest1.testSaveTwoArticles" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.FirstTest.testCheckSearchArticleInBackground" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.FirstTest.testChangeScreenOrientationOnSearchResult" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.FirstTest.testAmountOfEmptySearch" />
       </list>
     </recent_temporary>
   </component>
@@ -722,8 +722,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="109" column="16" lean-forward="true" selection-start-line="107" selection-start-column="4" selection-end-line="109" selection-end-column="16" />
+        <state relative-caret-position="335">
+          <caret line="426" column="3" lean-forward="true" selection-start-line="412" selection-start-column="2" selection-end-line="426" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -732,8 +732,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MyTest1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1005">
-          <caret line="157" column="77" lean-forward="false" selection-start-line="157" selection-start-column="77" selection-end-line="157" selection-end-column="77" />
+        <state relative-caret-position="63">
+          <caret line="195" column="28" lean-forward="false" selection-start-line="195" selection-start-column="28" selection-end-line="195" selection-end-column="28" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
