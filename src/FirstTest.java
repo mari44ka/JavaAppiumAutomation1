@@ -1,48 +1,23 @@
-import io.appium.java_client.AppiumDriver;
+
 import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.AndroidDriver;
-import org.junit.After;
+import lib.CoreTestCase;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.net.URL;
 import java.util.List;
 
 /**
  * Created by Mari on 9/20/18.
  */
-public class FirstTest {
-  private AppiumDriver driver;
-
-  @Before
-  public void setUp() throws Exception {
-    DesiredCapabilities capabilities = new DesiredCapabilities();
-    capabilities.setCapability("platformName", "Android");
-    capabilities.setCapability("deviceName", "AndroidTestDevice");
-    capabilities.setCapability("platformVersion", "5.1");
-    capabilities.setCapability("automationName", "Appium");
-    capabilities.setCapability("appPackage", "org.wikipedia");
-    capabilities.setCapability("appActivity", ".main.MainActivity");
-    capabilities.setCapability("app", "/Users/Mari/Desktop/JavaAppiumAutomation1/apks/org.wikipedia.apk");
-    driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-  }
-
-  @After
-  public void tearDown() {
-    driver.quit();
-
-  }
+public class FirstTest extends CoreTestCase {
 
   @Test
-  public void firstTest() {
+  public void testSearch() {
     waitforElementAndClick(By.xpath("//*[contains(@text,'Search Wikipedia')]"),
             "cannot find search input",
             5);
@@ -147,7 +122,7 @@ public class FirstTest {
   }
 
   @Test
-  public void saveFirstArticleToMyList() {
+  public void testsaveFirstArticleToMyList() {
     waitforElementAndClick(By.xpath("//*[contains(@text,'Search Wikipedia')]"),
             "cannot find search input",
             5);

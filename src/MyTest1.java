@@ -222,7 +222,7 @@ public class MyTest1 {
     ScreenOrientation orientation = driver.getOrientation();
     if (orientation == ScreenOrientation.PORTRAIT){
       driver.rotate(ScreenOrientation.LANDSCAPE);
-      
+
     }
   }
 
