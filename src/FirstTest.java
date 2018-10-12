@@ -1,12 +1,11 @@
 
 import lib.CoreTestCase;
-import lib.ui.ArticlePageObject;
-import lib.ui.MainPageObject;
-import lib.ui.SearchPageObject;
+import lib.ui.*;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ScreenOrientation;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 
@@ -87,65 +86,27 @@ public class FirstTest extends CoreTestCase {
 
   @Test
   public void testsaveFirstArticleToMyList() {
-    MainPageObject.waitforElementAndClick(By.xpath("//*[contains(@text,'Search Wikipedia')]"),
-            "cannot find search input",
-            5);
 
-    MainPageObject.waitforElementAndSendKeys(By.xpath("//*[contains(@text,'Search…')]"),
-            "Java",
-            "cannot find search input",
-            5);
-    MainPageObject.waitforElementAndClick(
-            By.xpath("//*[@resource-id ='org.wikipedia:id/page_list_item_container']//*[@text ='Object-oriented programming language']"),
-            "cannot find Object-oriented programming language. Topic searching by java",
-            5);
-    MainPageObject.WaitforElementPresent(By.id("org.wikipedia:id/view_page_title_text"),
-            "cannot find title",
-            10);
+    SearchPageObject SearchPageObject = new SearchPageObject(driver);
+    SearchPageObject.initSearchInput();
+    SearchPageObject.typeSearchLine("Java");
+    SearchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
 
-    MainPageObject.waitforElementAndClick(By.xpath("//android.widget.ImageView[@content-desc = 'More options']"),
-            "cannot find button to open article options",
-            5);
-    MainPageObject.waitforElementAndClick(By.xpath("//*[@text ='Add to reading list']"),
-            "cannot find option 'add to reading list'",
-            5);
-    MainPageObject.waitforElementAndClick(By.id("org.wikipedia:id/onboarding_button"),
-            "cannot find 'Got it' button",
-            5);
-    MainPageObject.waitForElementAndClear(By.id("org.wikipedia:id/text_input"),
-            "cannot find input to set name for article folder",
-            5);
+    ArticlePageObject ArticlePageObject = new ArticlePageObject(driver);
 
-   String name_of_folder = "learning programming";
-    MainPageObject.waitforElementAndSendKeys(By.id("org.wikipedia:id/text_input"),
-            name_of_folder,
-            "cannot put text into input",
-            5);
+    String article_title = ArticlePageObject.getArticleTitle();
+    String name_of_folder = "Learning programming";
 
-    MainPageObject.waitforElementAndClick(By.xpath("//*[@text = 'OK']"),
-            "cannot click button OK",
-            5);
+    ArticlePageObject.waitForTitleElement();
+    ArticlePageObject.addArticleToMyList(name_of_folder);
+    ArticlePageObject.closeArticle();
 
-    MainPageObject.waitforElementAndClick(By.xpath("//android.widget.ImageButton[@content-desc ='Navigate up']"),
-            "cannot find X link",
-            5);
-    MainPageObject.waitforElementAndClick(By.xpath("//android.widget.FrameLayout[@content-desc ='My lists']"),
-            "cannot find navigation button to my list",
-            5);
-    MainPageObject.waitforElementAndClick(By.xpath("//*[@text ='learning programming']"),
-            "cannot find my list",
-            5);
-    MainPageObject.WaitforElementPresent(By.xpath("//*[@text = 'Java (programming language)']"),
-            "cannot find saved article",
-            5);
+    NavigationUI NavigationUI = new NavigationUI(driver);
+    NavigationUI.clickMyLists();
 
-    MainPageObject.swipeElementToLeft(By.xpath("//*[@text = 'Java (programming language)']"),
-            "cannot swipe element");
-
-    MainPageObject.waithForElementNotPresent(By.xpath("//*[@text = 'Java (programming language)']"),
-            "cannot delete article",
-            5);
-
+    MyLIstPageObject MyLIstPageObject = new MyLIstPageObject(driver);
+    MyLIstPageObject.openFolderByName(name_of_folder);
+    MyLIstPageObject.swipeArticleToDelete(article_title);
 
   }
 
