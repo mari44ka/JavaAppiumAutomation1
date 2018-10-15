@@ -763,6 +763,9 @@
     <history-entry file="ArticleTests1 - 2018.10.15 at 00h 00m 28s.xml">
       <configuration name="ArticleTests1" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ArticleTests1 - 2018.10.15 at 00h 01m 32s.xml">
+      <configuration name="ArticleTests1" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="MyListsTest1 - 2018.10.14 at 22h 29m 16s.xml">
       <configuration name="MyListsTest1" configurationId="JUnit" />
     </history-entry>
@@ -777,9 +780,6 @@
     </history-entry>
     <history-entry file="MyListsTest1 - 2018.10.14 at 23h 18m 57s.xml">
       <configuration name="MyListsTest1" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyListsTest1_testSaveTwoArticles - 2018.10.14 at 22h 15m 46s.xml">
-      <configuration name="MyListsTest1.testSaveTwoArticles" configurationId="JUnit" />
     </history-entry>
     <history-entry file="MyListsTest1_testSaveTwoArticles - 2018.10.14 at 22h 21m 32s.xml">
       <configuration name="MyListsTest1.testSaveTwoArticles" configurationId="JUnit" />
@@ -801,7 +801,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33592534" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33592534" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
