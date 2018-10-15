@@ -15,7 +15,8 @@ import java.util.List;
  */
 public class MainPageObject {
   protected AppiumDriver driver;
-  public MainPageObject(AppiumDriver driver){
+
+  public MainPageObject(AppiumDriver driver) {
     this.driver = driver;
   }
 
@@ -124,12 +125,20 @@ public class MainPageObject {
     }
 
   }
-  public String waitForElementAndGetAttribute(By by, String attribute,String error_message, long timeOutInSeconds)
-  {
-    WebElement element = WaitforElementPresent(by,error_message,timeOutInSeconds);
+
+  public String waitForElementAndGetAttribute(By by, String attribute, String error_message, long timeOutInSeconds) {
+    WebElement element = WaitforElementPresent(by, error_message, timeOutInSeconds);
     return element.getAttribute(attribute);
 
 
   }
 
+  public void assertElementPresent(By by, String error_message) {
+    int amountOfElements = getAmountOfElements(by);
+    if (amountOfElements < 0) {
+      String default_message = " An element'" + by.toString() + "'supposed to be present";
+      throw new AssertionError(default_message + " " + error_message);
+    }
+
+  }
 }

@@ -1,6 +1,4 @@
 package lib.ui;
-
-import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -13,12 +11,14 @@ public class ArticlePageObject extends MainPageObject {
   private static final String
           TITLE = "org.wikipedia:id/view_page_title_text",
           FOOTER_ELEMENT = "//*[@text ='View page in browser']",
-  OPTIONS_BUTTON = "//android.widget.ImageView[@content-desc = 'More options']",
-  OPTIONS_ADD_TO_MYLIST_BUTTON = "//*[@text ='Add to reading list']",
-  ADD_TO_MYLIST_OVERLAY = "org.wikipedia:id/onboarding_button",
-  MYLIST_NAME_INPUT = "org.wikipedia:id/text_input",
-  MYLIST_OK_BUTTON = "//*[@text = 'OK']",
-  CLOSE_ARTICLE_BUTTON = "//android.widget.ImageButton[@content-desc ='Navigate up']";
+          OPTIONS_BUTTON = "//android.widget.ImageView[@content-desc = 'More options']",
+          OPTIONS_ADD_TO_MYLIST_BUTTON = "//*[@text ='Add to reading list']",
+          ADD_TO_MYLIST_OVERLAY = "org.wikipedia:id/onboarding_button",
+         MYLIST_NAME_INPUT = "org.wikipedia:id/text_input",
+         MYLIST_OK_BUTTON = "//*[@text = 'OK']",
+         CLOSE_ARTICLE_BUTTON = "//android.widget.ImageButton[@content-desc ='Navigate up']",
+         OPEN_ARTICLE_TPL = "//*[@text ='{SUBSTRING}']";
+
 
 
   public ArticlePageObject(AppiumDriver driver) {
@@ -62,10 +62,38 @@ public class ArticlePageObject extends MainPageObject {
              5);
 
    }
+  public void addanotherArticleToMyList(String name_of_folder){
+    this.waitforElementAndClick(By.xpath(OPTIONS_BUTTON),
+            "cannot find button to open article options",
+            5);
+    this.waitforElementAndClick(By.xpath(OPTIONS_ADD_TO_MYLIST_BUTTON),
+            "cannot find option 'add to reading list'",
+            5);
+    this.waitforElementAndClick(By.xpath("//*[@text ='"+name_of_folder+"']"),
+            "cannot find folder"+ name_of_folder,
+            10);
 
-   public void closeArticle(){
+
+  }
+  private static String getResultSearchElement(String substring) {
+    return OPEN_ARTICLE_TPL.replace("{SUBSTRING}", substring);
+  }
+
+
+  public void openArticle(String substring){
+    String search_result_xpath =getResultSearchElement(substring);
+    this.waitforElementAndClick(By.xpath(search_result_xpath),
+            "cannot find article left",5);
+  }
+
+
+  public void closeArticle(){
      this.waitforElementAndClick(By.xpath(CLOSE_ARTICLE_BUTTON),
              "cannot find X link",
              5);
    }
+  public void assertThereIsResultOfSearch(){
+    this.assertElementPresent(By.id(TITLE),"cannot find title");
+  }
+
 }

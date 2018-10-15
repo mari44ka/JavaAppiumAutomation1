@@ -45,51 +45,7 @@ public class MyTest1 {
 
   }
 
-  @Test
-  public void testSearchAndAssertText() {
-    waitForElementPresentAndClick(By.xpath("//*[contains(@text,'Search Wikipedia')]"),
-            "cannot find 'Search Wikipedia'",
-            5);
 
-    WebElement element = WaitforElementPresent(
-            By.xpath("//*[contains(@text,'Search…')]"),
-            "Cannot find 'Search...",
-            5);
-
-    String Search_test = element.getAttribute("text");
-
-    Assert.assertEquals("we cannot find 'Search...'",
-            "Search…",
-            Search_test);
-
-  }
-
-  @Test
-  public void testSearchCancel() {
-    waitForElementPresentAndClick(By.xpath("//*[contains(@text,'Search Wikipedia')]"),
-            "cannot find 'Search Wikipedia'",
-            5);
-
-    waitForElementPresentAndSendKeys(By.xpath("//*[contains(@text,'Search…')]"),
-            "Google",
-            "cannot find search input",
-            5);
-    WaitforElementPresent(
-            By.xpath("//*[@resource-id ='org.wikipedia:id/page_list_item_container']//*[@text ='Web browser developed by Google']"),
-            "cannot find 'browser developed by Google'",
-            5);
-    waitforElementAndClear(By.id("org.wikipedia:id/search_src_text"),
-            "cannot find search input search field",
-            5);
-
-    waitForElementPresentAndClick(By.id("org.wikipedia:id/search_close_btn"),
-            "cannot find X to cancel search",
-            5);
-
-    waitForElementNotPresent(By.xpath("//*[@resource-id ='org.wikipedia:id/page_list_item_container']//*[@text ='Web browser developed by Google']"),
-            "Search result is still present",
-            5);
-  }
 
   @Test
   public void testSaveTwoArticles()
