@@ -6,6 +6,7 @@ import junit.framework.TestCase;
 import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.URL;
+import java.time.Duration;
 
 /**
  * Created by Mari on 10/16/18.
@@ -43,7 +44,7 @@ public class IOSTestCase extends TestCase{
     driver.rotate(ScreenOrientation.LANDSCAPE);
   }
   protected void backgroundApp(int sec){
-    driver.runAppInBackground(sec);
+    driver.runAppInBackground(Duration.ofMillis(sec));
   }
 
 }
