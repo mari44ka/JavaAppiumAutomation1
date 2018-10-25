@@ -2,6 +2,7 @@ package testmy;
 
 import lib.CoreTestCase;
 import lib.ui.SearchPageObject;
+import lib.ui.factories.SearchPageObjectFactory;
 import org.junit.Test;
 
 
@@ -11,7 +12,7 @@ import org.junit.Test;
 public class SearchTests1 extends CoreTestCase {
   @Test
   public void testSearchAndAssertText() {
-    SearchPageObject SearchPageObject = new SearchPageObject(driver);
+    SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
     SearchPageObject.initSearchInput();
     String search_test =SearchPageObject.textAtribute();
 
@@ -23,7 +24,7 @@ public class SearchTests1 extends CoreTestCase {
 
   @Test
   public void testSearchCancel() {
-    SearchPageObject SearchPageObject = new SearchPageObject(driver);
+    SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
     SearchPageObject.initSearchInput();
     SearchPageObject.typeSearchLine("Google");
     SearchPageObject.clickCanselSearch();

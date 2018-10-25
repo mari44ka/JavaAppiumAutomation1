@@ -6,11 +6,10 @@ import io.appium.java_client.AppiumDriver;
 /**
  * Created by Mari on 10/12/18.
  */
-public class NavigationUI extends MainPageObject {
+abstract public class NavigationUI extends MainPageObject {
 
-  private static final String
-          MY_LISTS = "xpath://android.widget.FrameLayout[@content-desc ='My lists']";
-
+  protected static String
+          MY_LISTS;
 
    public NavigationUI(AppiumDriver driver) {
     super(driver);

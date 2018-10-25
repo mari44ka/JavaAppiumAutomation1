@@ -1,6 +1,7 @@
 package test.iOS;
 
 import lib.CoreTestCase;
+import lib.Platform;
 import lib.ui.WelcomePageObject;
 
 /**
@@ -9,7 +10,7 @@ import lib.ui.WelcomePageObject;
 public class GetStartedtest extends CoreTestCase {
 
   public void testPassThroughWelcome(){
-    if (this.Platform.isAndroid()) {
+    if (Platform.getInstance().isAndroid()) {
       return;
     }
     WelcomePageObject Welcomepage = new WelcomePageObject(driver);

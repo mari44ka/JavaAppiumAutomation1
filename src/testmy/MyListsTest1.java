@@ -2,6 +2,10 @@ package testmy;
 
 import lib.CoreTestCase;
 import lib.ui.*;
+import lib.ui.factories.ArticlePageObjectFactory;
+import lib.ui.factories.MyListPageObjectFactory;
+import lib.ui.factories.NavigatioUIFactory;
+import lib.ui.factories.SearchPageObjectFactory;
 import org.junit.Test;
 
 
@@ -13,12 +17,12 @@ public class MyListsTest1 extends CoreTestCase {
   @Test
   public void testSaveTwoArticles()
   {
-    SearchPageObject SearchPageObject = new SearchPageObject(driver);
+    SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
     SearchPageObject.initSearchInput();
     SearchPageObject.typeSearchLine("Java");
     SearchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
 
-    ArticlePageObject ArticlePageObject = new ArticlePageObject(driver);
+    ArticlePageObject ArticlePageObject = ArticlePageObjectFactory.get(driver);
     String article_title = ArticlePageObject.getArticleTitle();
     String name_of_folder = "Learning programming";
     ArticlePageObject.waitForTitleElement();
@@ -32,10 +36,10 @@ public class MyListsTest1 extends CoreTestCase {
     ArticlePageObject.waitForTitleElement();
     ArticlePageObject.addanotherArticleToMyList(name_of_folder);
     ArticlePageObject.closeArticle();
-    NavigationUI NavigationUI = new NavigationUI(driver);
+    NavigationUI NavigationUI = NavigatioUIFactory.get(driver);
     NavigationUI.clickMyLists();
 
-    MyLIstPageObject MyLIstPageObject = new MyLIstPageObject(driver);
+    MyLIstPageObject MyLIstPageObject = MyListPageObjectFactory.get(driver);
     MyLIstPageObject.openFolderByName(name_of_folder);
     MyLIstPageObject.swipeArticleToDelete(article_title);
     ArticlePageObject.openArticle("Java version history");
