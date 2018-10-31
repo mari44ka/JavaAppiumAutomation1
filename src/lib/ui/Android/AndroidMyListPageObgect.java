@@ -10,7 +10,7 @@ public class AndroidMyListPageObgect extends MyLIstPageObject {
 
   static {
     FOLDER_NAME_TPL ="xpath://*[@text ='{FOLDER_NAME}']";
-    ARTICLE_BY_TITLE_TPL = "//*[@text = '{TITLE}']";
+    ARTICLE_BY_TITLE_TPL ="xpath://*[@text = '{TITLE}']";
   }
 
   public AndroidMyListPageObgect(AppiumDriver driver){

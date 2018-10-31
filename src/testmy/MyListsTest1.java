@@ -1,6 +1,7 @@
 package testmy;
 
 import lib.CoreTestCase;
+import lib.Platform;
 import lib.ui.*;
 import lib.ui.factories.ArticlePageObjectFactory;
 import lib.ui.factories.MyListPageObjectFactory;
@@ -14,6 +15,9 @@ import org.junit.Test;
  */
 public class MyListsTest1 extends CoreTestCase {
 
+  private static final String name_of_folder = "Learning programming";
+
+
   @Test
   public void testSaveTwoArticles()
   {
@@ -24,31 +28,47 @@ public class MyListsTest1 extends CoreTestCase {
 
     ArticlePageObject ArticlePageObject = ArticlePageObjectFactory.get(driver);
     String article_title = ArticlePageObject.getArticleTitle();
-    String name_of_folder = "Learning programming";
-    ArticlePageObject.waitForTitleElement();
-    ArticlePageObject.addArticleToMyList(name_of_folder);
+    if (Platform.getInstance().isAndroid())
+    {
+     ArticlePageObject.waitForTitleElement();
+     ArticlePageObject.addArticleToMyList(name_of_folder);}
+    else {
+      ArticlePageObject.addArticleToMySaved();
+      ArticlePageObject.closeSyncSavedArticle();}
+
     ArticlePageObject.closeArticle();
 
     SearchPageObject.initSearchInput();
-    SearchPageObject.typeSearchLine("Java");
+    if (Platform.getInstance().isAndroid()){
+    SearchPageObject.typeSearchLine("Java");}
+
     SearchPageObject.clickByArticleWithSubstring("Java version history");
+    if (Platform.getInstance().isAndroid()){
 
     ArticlePageObject.waitForTitleElement();
-    ArticlePageObject.addanotherArticleToMyList(name_of_folder);
+    ArticlePageObject.addanotherArticleToMyList(name_of_folder);}
+    else {
+      ArticlePageObject.addArticleToMySaved();
+      }
     ArticlePageObject.closeArticle();
     NavigationUI NavigationUI = NavigatioUIFactory.get(driver);
     NavigationUI.clickMyLists();
 
     MyLIstPageObject MyLIstPageObject = MyListPageObjectFactory.get(driver);
-    MyLIstPageObject.openFolderByName(name_of_folder);
+
+    if(Platform.getInstance().isAndroid()){
+
+    MyLIstPageObject.openFolderByName(name_of_folder);}
+
     MyLIstPageObject.swipeArticleToDelete(article_title);
+
     ArticlePageObject.openArticle("Java version history");
 
     String article_title1 = ArticlePageObject.getArticleTitle();
     String title ="Java version history";
     assertEquals(
-            "we cannot see expected title"+ title,
-            title,
+           "we cannot see expected title"+ title,
+           title,
             article_title1);
 
   }

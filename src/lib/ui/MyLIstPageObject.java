@@ -35,7 +35,7 @@ abstract public class MyLIstPageObject extends MainPageObject {
 
   public void waitForArticleToAppearByTitle(String article_title) {
     String article_xpath = getTitleNameByXpath(article_title);
-    this.WaitforElementPresent(article_xpath, "cannot find saved article by title" + article_title, 15);
+    this.WaitforElementPresent(article_xpath, "cannot find saved article by title " + article_title, 15);
   }
 
   public void waitForArticleToDesappearByTitle(String article_title) {

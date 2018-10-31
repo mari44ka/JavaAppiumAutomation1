@@ -13,7 +13,7 @@ public class IOSArticlePageObject extends ArticlePageObject {
     OPTIONS_ADD_TO_MYLIST_BUTTON = "id:Save for later";
     CLOSE_ARTICLE_BUTTON = "id:Back";
     OPEN_ARTICLE_TPL =
-            "xpath://XCUIElementTypeLink[@name='Java (programming language) Object-oriented programming language']";
+            "xpath://XCUIElementTypeLink[contains(@name,'{TITLE}']";
     CLOSE_SYNC_OR_SAVED_ARTICLE_WINDOW ="id:places auth close";
   }
   public IOSArticlePageObject (AppiumDriver driver){
