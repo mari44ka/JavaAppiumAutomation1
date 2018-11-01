@@ -8,12 +8,13 @@ import lib.ui.ArticlePageObject;
 import lib.ui.IOS.IOSArticlePageObject;
 import lib.ui.IOS.IOSNavigationUI;
 import lib.ui.NavigationUI;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 /**
  * Created by Mari on 10/22/18.
  */
 public class NavigatioUIFactory {
-  public static NavigationUI get(AppiumDriver driver){
+  public static NavigationUI get(RemoteWebDriver driver){
     if (Platform.getInstance().isAndroid()){
       return new AndroidNavigationUI(driver) {
       };

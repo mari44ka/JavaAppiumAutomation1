@@ -2,6 +2,7 @@ package lib.ui.IOS;
 
 import io.appium.java_client.AppiumDriver;
 import lib.ui.ArticlePageObject;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 /**
  * Created by Mari on 10/20/18.
@@ -16,7 +17,7 @@ public class IOSArticlePageObject extends ArticlePageObject {
             "xpath://XCUIElementTypeLink[contains(@name,'{TITLE}']";
     CLOSE_SYNC_OR_SAVED_ARTICLE_WINDOW ="id:places auth close";
   }
-  public IOSArticlePageObject (AppiumDriver driver){
+  public IOSArticlePageObject (RemoteWebDriver driver){
     super(driver);
   }
 }

@@ -2,6 +2,7 @@ package lib.ui.IOS;
 
 import io.appium.java_client.AppiumDriver;
 import lib.ui.MyLIstPageObject;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 /**
  * Created by Mari on 10/22/18.
@@ -13,7 +14,7 @@ public class IOSMyListPageObject extends MyLIstPageObject {
 
 
   }
-  public IOSMyListPageObject(AppiumDriver driver){
+  public IOSMyListPageObject(RemoteWebDriver driver){
     super(driver);
   }
 }

@@ -2,6 +2,7 @@ package lib.ui;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebElement;
 import lib.Platform;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 /**
  * Created by Mari on 10/12/18.
@@ -23,7 +24,7 @@ abstract public class ArticlePageObject extends MainPageObject {
 
 
 
-  public ArticlePageObject(AppiumDriver driver) {
+  public ArticlePageObject(RemoteWebDriver driver) {
     super(driver);
   }
 
