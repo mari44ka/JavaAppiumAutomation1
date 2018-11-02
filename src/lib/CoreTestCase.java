@@ -25,6 +25,7 @@ public class CoreTestCase extends TestCase {
 
     this.rotateScreenPortrait();
     this.skipWelcomePageIOS();
+    this.openWikiWebPageForMobileWeb();
 
   }
 
@@ -42,6 +43,15 @@ public class CoreTestCase extends TestCase {
       WelcomePage.clickSkipButton();
     }
     else { System.out.println("Method rotateScreenPortrait does nothing for platform" + Platform.getInstance().getPlatformVar());}
+    }
+  }
+  private void openWikiWebPageForMobileWeb() {
+    if (Platform.getInstance().isMW()) {
+      driver.get("https://en.m.wikipedia.org");
+    } else {
+      {
+        System.out.println("Method rotateScreenPortrait does nothing for platform" + Platform.getInstance().getPlatformVar());
+      }
     }
   }
 
