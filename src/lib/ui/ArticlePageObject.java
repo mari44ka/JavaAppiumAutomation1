@@ -32,22 +32,28 @@ abstract public class ArticlePageObject extends MainPageObject {
   public WebElement waitForTitleElement() {
     return this.WaitforElementPresent(TITLE, "cannot find article title on page", 15);
   }
-   public String getArticleTitle(){
-    WebElement title_element = waitForTitleElement();
-    if (Platform.getInstance().isAndroid()){
-        return title_element.getAttribute("text");}
-    else {
-        return title_element.getAttribute("name");
-    }
+   public String getArticleTitle() {
+       WebElement title_element = waitForTitleElement();
+       if (Platform.getInstance().isAndroid()) {
+           return title_element.getAttribute("text");
+       }
+       if (Platform.getInstance().isIOS()) {
+           return title_element.getAttribute("name");
+       } else {
+           return title_element.getText();
 
+       }
    }
 
    public void swipeToFooter(){
      if(Platform.getInstance().isAndroid()){
        this.swipeUpToFindElement(FOOTER_ELEMENT,"cannot find the end of article",40);}
-       else{
+       if (Platform.getInstance().isIOS()){
        this.swipeUpTillElementAppear(FOOTER_ELEMENT,"cannot find the end of article",40);
      }
+     else{this.scrollWebPageTillElementNotVisible(FOOTER_ELEMENT,
+               "cannot find the end of article",
+               40);}
 
    }
 
