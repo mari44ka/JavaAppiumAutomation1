@@ -8,6 +8,7 @@ import lib.ui.ArticlePageObject;
 import lib.ui.IOS.IOSArticlePageObject;
 import lib.ui.IOS.IOSNavigationUI;
 import lib.ui.NavigationUI;
+import lib.ui.mobile_web.MWNavigationUI;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 /**
@@ -19,8 +20,12 @@ public class NavigatioUIFactory {
       return new AndroidNavigationUI(driver) {
       };
     }
-    else{
+    if (Platform.getInstance().isIOS()){
       return new IOSNavigationUI(driver);
     }
+    else{
+      return new MWNavigationUI(driver);
+    }
   }
+
 }

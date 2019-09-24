@@ -8,6 +8,7 @@ import lib.ui.ArticlePageObject;
 import lib.ui.IOS.IOSArticlePageObject;
 import lib.ui.IOS.IOSMyListPageObject;
 import lib.ui.MyLIstPageObject;
+import lib.ui.mobile_web.MWMyListsPageObject;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 /**
@@ -18,8 +19,11 @@ public class MyListPageObjectFactory {
     if (Platform.getInstance().isAndroid()){
       return new AndroidMyListPageObgect(driver);
     }
-    else{
+    if (Platform.getInstance().isIOS()){
       return new IOSMyListPageObject(driver);
+    }
+    else{
+      return new MWMyListsPageObject(driver);
     }
   }
 }

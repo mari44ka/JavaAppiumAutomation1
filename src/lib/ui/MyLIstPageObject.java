@@ -12,7 +12,8 @@ abstract public class MyLIstPageObject extends MainPageObject {
 
   protected static String
           FOLDER_NAME_TPL,
-          ARTICLE_BY_TITLE_TPL;
+          ARTICLE_BY_TITLE_TPL,
+          REMOVE_FROM_SAVED_BUTTON;
 
   private static String getFolderXpathByName(String name_of_folder) {
     return FOLDER_NAME_TPL.replace("{FOLDER_NAME}", name_of_folder);
@@ -20,6 +21,10 @@ abstract public class MyLIstPageObject extends MainPageObject {
 
   private static String getTitleNameByXpath(String title_name) {
     return ARTICLE_BY_TITLE_TPL.replace("{TITLE}", title_name);
+  }
+
+  private static String getRemoveButtonByTitle(String article_title) {
+    return REMOVE_FROM_SAVED_BUTTON.replace("{TITLE}",article_title);
   }
 
   public MyLIstPageObject(RemoteWebDriver driver) {
@@ -47,14 +52,25 @@ abstract public class MyLIstPageObject extends MainPageObject {
   public void swipeArticleToDelete(String article_title) {
     this.waitForArticleToAppearByTitle(article_title);
     String article_xpath = getTitleNameByXpath(article_title);
-    this.swipeElementToLeft(article_xpath,
-            "cannot swipe element");
-    if (Platform.getInstance().isIOS()) {
-      this.clickElementToTheRightUpperCorner(article_xpath, "cannot fined saved article");
-    }
-    this.waitForArticleToDesappearByTitle(article_title);
+    if (Platform.getInstance().isIOS() || Platform.getInstance().isAndroid()) {
 
+      this.swipeElementToLeft(article_xpath,
+              "cannot swipe element");}
+    else {
+      String remove_locator = getRemoveButtonByTitle(article_title);
+      this.waitforElementAndClick(remove_locator,
+              "cannot click button to remove article from saved", 10);
+
+
+      if (Platform.getInstance().isIOS()) {
+        this.clickElementToTheRightUpperCorner(article_xpath, "cannot fined saved article");
+      }
+      if (Platform.getInstance().isMW()){
+        driver.navigate().refresh();
+      }
+
+      this.waitForArticleToDesappearByTitle(article_title);
+    }
   }
 }
-
 

@@ -14,6 +14,7 @@ abstract public class ArticlePageObject extends MainPageObject {
           FOOTER_ELEMENT,
           OPTIONS_BUTTON ,
           OPTIONS_ADD_TO_MYLIST_BUTTON,
+          OPTIONS_REMOVE_FROM_MY_LIST_BUTTON,
           ADD_TO_MYLIST_OVERLAY,
          MYLIST_NAME_INPUT,
          MYLIST_OK_BUTTON,
@@ -95,6 +96,9 @@ abstract public class ArticlePageObject extends MainPageObject {
   }
 
   public void addArticleToMySaved(){
+      if(Platform.getInstance().isMW()){
+          this.removeArticleFromSavedIfItAdded();
+      }
     this.waitforElementAndClick(
             OPTIONS_ADD_TO_MYLIST_BUTTON,
             "cannot find option to add article to reading list",
@@ -113,9 +117,13 @@ abstract public class ArticlePageObject extends MainPageObject {
 
 
   public void closeArticle(){
+      if(Platform.getInstance().isAndroid() || Platform.getInstance().isIOS()){
      this.waitforElementAndClick(CLOSE_ARTICLE_BUTTON,
              "cannot find X link",
-             5);
+             5);}
+             else {
+                 System.out.println("method closeArticle() do nothing for platform" + Platform.getInstance().getPlatformVar());
+      }
    }
   public void assertThereIsResultOfSearch(){
     this.assertElementPresent(TITLE,"cannot find title");
@@ -124,6 +132,16 @@ abstract public class ArticlePageObject extends MainPageObject {
     this.waitforElementAndClick(CLOSE_SYNC_OR_SAVED_ARTICLE_WINDOW,
             "cannot find close or sync article window",
             5);
+  }
+  public void removeArticleFromSavedIfItAdded(){
+      if(this.isElementPresent(OPTIONS_REMOVE_FROM_MY_LIST_BUTTON)){
+          this.waitforElementAndClick(OPTIONS_REMOVE_FROM_MY_LIST_BUTTON,
+                  "cannot click button to remove article from saved",
+                  1);
+          this.WaitforElementPresent(
+                  OPTIONS_ADD_TO_MYLIST_BUTTON,
+                  "cannot find button to add an article to saved list after removing it from this list before");
+      }
   }
 
 }
